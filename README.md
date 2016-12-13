@@ -1,2 +1,2 @@
 # SchoolTriviaGame
-Description goes here.
+More exciting description here.
