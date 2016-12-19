@@ -4,11 +4,11 @@ $(function () {
 	// Below is a list of all the questions and correct/incorrect answers in JSON format
 	quiz = new TriviaQuiz($('.wrapper'), [
 		{
-			"question": "This is question 1.",
+			"question": "מה ההבדל בין הנדסה גנטית לביומימקרי?",
 			"answers": [
-				{ "text": "Answer 1 is incorrect", "correct": false },
+				{ "text": "", "correct": false },
 				{ "text": "Answer 2 is incorrect", "correct": false },
-				{ "text": "Answer 3 is correct", "correct": true },
+				{ "text": "ביו-מימקרי מחפש השראה ורעיונות בטבע בעוד הנדסה גנטית משנה את הטבע על ידי התערבות במבנה הגנטי של צמחים ושל בעלי חיים.", "correct": true },
 				{ "text": "Answer 4 is incorrect", "correct": false }
 			]
 		},
