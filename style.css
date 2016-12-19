@@ -1,1 +1,31 @@
 * { margin:0; padding:0; }
+
+body {
+    direction: rtl;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.question {
+    margin-top : 40px;
+    margin-bottom: 30px;
+}
+
+.answer {
+    width: 80%;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.answer div{
+    float: right;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    width: 25%;
+}
+
+.answer div:hover {
+    background-color: paleturquoise;
+}
