@@ -27,7 +27,7 @@ TriviaQuiz.prototype.nextQuestion = function () {
 	var this_answers = this_obj["answers"];
 	
 	// Fill the DOM with the current question and answers
-	this.target.find('.question').html(this_question);
+    this.target.find('.question').html((this.current_question+1) + ". " + this_question);
 	for (var i=0; i<this_answers.length; i++) {
 		this.target.find('.answers .answer-' + i).html(this_answers[i]["text"]);
 	}
@@ -57,14 +57,36 @@ TriviaQuiz.prototype.checkAnswer = function (i) {
 	var this_obj = this.question_data[this.current_question];
 	var this_answers = this_obj["answers"];
 	if (this_answers[i]["correct"]) {
-		// Add the appropriate points and move on to the next question
-		this.score++;
-		this.updateScore();
-		this.nextQuestion();
+        // Show this answer as correct
+		// Add the appropriate points
+        // Disable all further clicks for 3 seconds
+        // Then show the next question
+        this.target.find('.answer-' + i).addClass('right');
+        this.score++;
+        this.updateScore();
+        this.target.find('.answers div').unbind('click');
+        timer_ref = this;
+        setTimeout(function () {
+            timer_ref.target.find('.answers div').removeClass('right');
+            timer_ref.nextQuestion();
+        }, 2000);
 	}
 	else {
-		// Do something here
-		alert("Try again");
+		// Show this as the wrong answer and show the correct one
+        // Disable all further clicks for 3 seconds
+        // Then show the next question
+        this.target.find('.answer-' + i).addClass('wrong');
+        for (x in this_answers) {
+            if (this_answers[x]["correct"]) {
+                this.target.find('.answer-' + x).addClass('right');
+            }
+        }
+		this.target.find('.answers div').unbind('click');
+        timer_ref = this;
+        setTimeout(function () {
+            timer_ref.target.find('.answers div').removeClass('wrong').removeClass('right');
+            timer_ref.nextQuestion();
+        }, 2000);
 	}
 }
 

@@ -6,7 +6,7 @@ $(function () {
 		{
 			"question": "מה ההבדל בין הנדסה גנטית לביומימקרי?",
 			"answers": [
-				{ "text": "", "correct": false },
+				{ "text": "Answer 1 is incorrect", "correct": false },
 				{ "text": "Answer 2 is incorrect", "correct": false },
 				{ "text": "ביו-מימקרי מחפש השראה ורעיונות בטבע בעוד הנדסה גנטית משנה את הטבע על ידי התערבות במבנה הגנטי של צמחים ושל בעלי חיים.", "correct": true },
 				{ "text": "Answer 4 is incorrect", "correct": false }
