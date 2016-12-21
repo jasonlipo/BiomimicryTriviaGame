@@ -2,10 +2,19 @@
 @font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
 @font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
 *{margin:0;padding:0}
-body{direction:rtl; font-family: "Hebrew-Regular"; font-size:16px;}
+body{direction:rtl;font-family: "Hebrew-Regular";font-size:16px;background: url(Background.png);background-size: cover;}
 .wrapper{text-align:center}
-.question{margin-top:40px;margin-bottom:30px;font-family: "Hebrew-Bold";}
+.question{font-family: "Hebrew-Bold";font-size: 60px;color: #fff;margin: 55px 0;}
 .answers{width:80%;display:inline-block;margin-top:50px}
-.answers div{float:right;padding-bottom:50px;padding-top:50px;width:24.25%; border:1px solid black;box-sizing: border-box}
-.answers div:hover{background-color:#afeeee}
-.answer-1, .answer-2 {margin: auto 0.5%}
+.answers div{float:right;width: 47%;box-sizing: border-box;font-size: 36px;background: #fff;height: 260px;padding: 40px 85px;box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.38);border-radius: 20px;position: relative;}
+.answers div.wrong{background: #ffa9a9;}
+.answers div.right{background: #81e881;}
+.answers div:before {height: 72px;width: 100px;position:absolute;background: rgb(107, 121, 142);color: #fff;font-size: 52px;right: -15px;top: -15px;border-radius: 20px;}
+.answer-2 {clear:both;margin: 0 0 50px 6%;}
+.answer-0 {margin: 0 0 50px 6%;}
+.answer-0:before{content:"א";}
+.answer-1:before{content:"ב";}
+.answer-2:before{content:"ג";}
+.answer-3:before{content:"ד";}
+.scoreBox{background: rgba(0, 0, 0, 0.6);color: #fff;position: absolute; width: 100%;bottom: 0;font-size: 40px;padding: 20px 0;}
+.score{display: inline-block;margin: 0 14px;font-weight: bold;}
