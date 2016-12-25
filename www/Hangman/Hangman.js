@@ -1,5 +1,7 @@
 var Hangman = function (e, w) {
     
+    // Hangman.initialise
+    // Build the hangman game
     this.initialise = function (el, words) {
         
         this.el = el;
@@ -30,52 +32,69 @@ var Hangman = function (e, w) {
         // Guess a letter
         game = this;
         this.el.find(".letter-choice").click(function() {
-            
             $(this).addClass("muted");
-            var guessedLetter = $(this).text();
-            
-            if (game.hasBeenGuessed(guessedLetter)) {
-                alert("That letter has already been guessed. Please select another letter.");
-            }
-            else {
-                
-                game.makeGuess(guessedLetter);
-
-                $('.word-container').empty();
-                for (i=0; i<game.revealedLetters.length; i++) {
-                    game.el.find('.word-container').append("<p class='letter'>" + game.revealedLetters[i] + "</p>");
-                }
-
-                game.el.find('div.hangman-sprite').removeClass().addClass('hangman-sprite hangman-sprite' + game.wrong);
-
-                game.el.find('.incorrect-guesses h3').empty().append("Incorrect Guesses: ");
-                for (i=0; i<game.incorrectGuessedLetters.length; i++) {
-                    game.el.find('.incorrect-guesses h3').append(game.incorrectGuessedLetters[i] + " ");
-                }
-
-                if (game.isOver()) {
-                    game.finish();
-                }
-
-            }
+            guessedLetter = $(this).text();
+            game.makeGuess(guessedLetter);
         }); 
 
+        $(document).keyup(function (e) {
+            keyCode = e.which;
+            if (keyCode >= 65 && keyCode <= 90) {
+                $(this).addClass("muted");
+                guessedLetter = String.fromCharCode(keyCode).toLowerCase();
+                game.el.find('.letter-choice').each(function () {
+                    if ($(this).html() == guessedLetter) {
+                        $(this).addClass('muted');
+                    }
+                });
+                game.makeGuess(guessedLetter);
+            }
+        });
+
     }
 
-    this.makeGuess = function (letter) {
-        this.guessedLetters.push(letter);
-        if (this.wordHasLetter(letter)) {
-            this.revealLetters(letter);
-        } else {
-            this.markLetterAsIncorrectGuess(letter);
-            this.wrong++;
+    // Hangman.makeGuess
+    // Callback function when the user guesses a letter
+    this.makeGuess = function (guessedLetter) {
+                
+        if (this.guessedLetters.indexOf(guessedLetter) === -1) {
+            
+            this.guessedLetters.push(guessedLetter);
+            if (this.wordHasLetter(guessedLetter)) {
+                this.revealLetters(guessedLetter);
+            } else {
+                this.incorrectGuessedLetters.push(guessedLetter);
+                this.wrong++;
+            }
+
+            $('.word-container').empty();
+            for (i=0; i<this.revealedLetters.length; i++) {
+                this.el.find('.word-container').append("<p class='letter'>" + this.revealedLetters[i] + "</p>");
+            }
+
+            this.el.find('div.hangman-sprite').removeClass().addClass('hangman-sprite hangman-sprite' + this.wrong);
+
+            this.el.find('.incorrect-guesses h3').empty().append("Incorrect Guesses: ");
+            for (i=0; i<this.incorrectGuessedLetters.length; i++) {
+                this.el.find('.incorrect-guesses h3').append(this.incorrectGuessedLetters[i] + " ");
+            }
+
+            if (this.isOver()) {
+                this.finish();
+            }
+
         }
+
     }
 
+    // Hangman.wordHasLetter
+    // Returns true if the word contains the queried letter
     this.wordHasLetter = function(guessedLetter) {
         return this.wordToGuess.indexOf(guessedLetter) > -1;
     }
 
+    // Hangman.revealLetters
+    // Add the guessedLetter into the revealedLetters array at the right index
     this.revealLetters = function(guessedLetter) {
         for (i=0; i<this.revealedLetters.length; i++) {
             if (guessedLetter == this.wordToGuess[i]) {
@@ -84,35 +103,37 @@ var Hangman = function (e, w) {
         }
     }
 
+    // Hangman.generateRevealedLetters
+    // Initialise an empty array equal to the length of the word
     this.generateRevealedLetters = function() {
         this.revealedLetters = [];
-        for (var i = this.key.length; i > 0; i--) {
+        for (var i = this.wordToGuess.length; i > 0; i--) {
             this.revealedLetters.push("");
         }
     }
 
+    // Hangman.isRevealed
+    // Returns true if all the letters have been revealed i.e. won the game
     this.isRevealed = function() {
         return !this.revealedLetters.some(function(letter) {
             return letter === '';
         });
     }
 
-    this.hasBeenGuessed = function(letter) {
-        return this.guessedLetters.indexOf(letter) > -1;
-    }
-
-    this.markLetterAsIncorrectGuess = function(letter) {
-        this.incorrectGuessedLetters.push(letter);
-    }
-
+    // Hangman.isOver
+    // Either a win or a lose results in the game ending
     this.isOver = function(hangman, wordToGuess) {
         return this.hangmanDead() || this.isRevealed();
     }
 
+    // Hangman.hangmanDead
+    // The game ends when the user guesses 7 incorrect letters
     this.hangmanDead = function () {
         return this.wrong >= 7;
     }
 
+    // Hangman.finish
+    // Notify the user if they have won or lost the gmae
     this.finish = function () {
         if (this.hangmanDead()) {
             alert("You lose");

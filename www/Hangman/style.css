@@ -13,7 +13,7 @@ body{background-image:url(bg.png)}
 .letter{border-bottom:2px solid #000;font-size:2em;height:50px;width:30px;text-align:center;float:left;margin-right:10px}
 .red{color:#c0392b}
 .green{color:#2ecc71}
-.muted{color:grey;}
+.muted{color: grey !important;cursor: default !important;}
 button.play-again{display:none;margin-top:20px}
 .unguessed-letters{height:150px}
 .unguessed-letters p{text-align:center}
