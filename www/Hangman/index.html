@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Hangman</title>
+		<script src="jquery.min.js"></script>
+        <script src="Hangman.js"></script>
+		<script src="client.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" media="all">
+	</head>
+  <body>
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-offset-1">
+          <h1>Hangman</h1>
+        </div>
+      </div> 
+
+      <hr>
+
+      <div class="hangman-game row">
+
+        <div class="col-sm-5 col-md-5 col-md-offset-1">
+          <div class="row">
+            <div class="hangman-sprite" class="hangman-sprite0"></div>
+          </div>
+        </div>
+
+        <div class="col-sm-5 col-md-5 play-area">
+          <div class="row">
+            <div class="unguessed-letters"></div>
+          </div>
+          <div class="row">
+            <div class="word-container">
+              <p class="letter"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="incorrect-guesses">
+              <h3 class="light-weight">Incorrect Guesses: </h3>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-lg btn-success" class="play-again">Play again?</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+	</body>
+</html>
