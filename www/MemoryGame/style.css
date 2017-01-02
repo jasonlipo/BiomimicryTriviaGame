@@ -1,10 +1,9 @@
-
 html, body {
 	height: 100%;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url(media/Background%20\(2\).jpg);
+    background-image: url(media/Background\(2\).jpg);
 }
 .wrapper {
     padding: 2%;
@@ -12,6 +11,7 @@ html, body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 .flipContainer {
     height: 21%;
