@@ -8,7 +8,7 @@ var Memory = function (){
             <div class='flipContainer' key='"+i+"'>\
                 <div class='tile' >\
                     <div class='face'>\
-                        <img src='media/back.jpg'>\
+                        <img src='media/logo_hamanchil.jpg'>\
                     </div>\
                     <div class='back'>\
                         <img src='"+this.tiles[i].img+"'>\
