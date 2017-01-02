@@ -8,10 +8,10 @@ var Memory = function (){
             <div class='flipContainer' key='"+i+"'>\
                 <div class='tile' >\
                     <div class='face'>\
-                        <img src='"+this.tiles[i].img+"'>\
+                        <img src='media/back.jpg'>\
                     </div>\
                     <div class='back'>\
-                        <img src='back.jpg'>\
+                        <img src='"+this.tiles[i].img+"'>\
                     </div>\
                 </div>\
             </div>");        
@@ -63,26 +63,173 @@ var Memory = function (){
 
 var tiles = [
 		{
-			name: "pair1",
-			img: "tempFlower.jpg",
+			name: "abalone",
+			img: "media/abalone.jpg",
 			id: 1,
 		},
 		{
-			name: "pair1",
-			img: "tempFlower.jpg",
+			name: "abaloneMatch",
+			img: "media/abaloneMatch.jpg",
 			id: 1
 		},
 		{
-			name: "pair2",
-			img:"tempFlower.jpg",
+			name: "bees",
+			img:"media/bees.jpg",
 			id: 2
 		},
 		{
-			name: "pair2",
-			img: "tempFlower.jpg",
+			name: "beesMatch",
+			img: "media/beesMatch.jpg",
 			id: 2
-		}
+		},{
+			name: "bird",
+			img: "media/bird.jpg",
+			id: 3
+		},
+		{
+			name: "birdMatch",
+			img: "media/birdMatch.jpg",
+			id: 3
+		},
+		{
+			name: "elephant",
+			img:"media/elephant.jpg",
+			id: 4
+		},
+		{
+			name: "elephantMatch",
+			img: "media/elephantMatch.jpg",
+			id: 4
+		},{
+			name: "fish",
+			img: "media/fish.jpg",
+			id: 5
+		},
+		{
+			name: "fishMatch",
+			img: "media/fishMatch.jpg",
+			id: 5
+		},
+		{
+			name: "owl",
+			img:"media/owl.jpg",
+			id: 6
+		},
+		{
+			name: "owlMatch",
+			img: "media/owlMatch.jpg",
+			id: 6
+		},{
+			name: "termites",
+			img: "media/termites.jpg",
+			id: 7
+		},
+		{
+			name: "termitesMatch",
+			img: "media/termitesMatch.jpg",
+			id: 7
+		},
+		{
+			name: "velcro",
+			img:"media/velcro.jpg",
+			id: 8
+		},
+		{
+			name: "velcroMatch",
+			img: "media/velcroMatch.jpg",
+			id: 8
+		},{
+			name: "whale",
+			img: "media/whale.jpg",
+			id: 9
+		},
+		{
+			name: "whaleMatch",
+			img: "media/whaleMatch.jpg",
+			id: 9
+		},{
+			name: "termites",
+			img: "media/termites.jpg",
+			id: 10
+		},
+		{
+			name: "termitesMatch",
+			img: "media/termitesMatch.jpg",
+			id: 10
+		},
+		{
+			name: "velcro",
+			img:"media/velcro.jpg",
+			id: 11
+		},
+		{
+			name: "velcroMatch",
+			img: "media/velcroMatch.jpg",
+			id: 11
+		},{
+			name: "whale",
+			img: "media/whale.jpg",
+			id: 12
+		},
+		{
+			name: "whaleMatch",
+			img: "media/whaleMatch.jpg",
+			id: 12
+		}			
 	];
+
+var info = [
+		{
+			id: "1",
+			text: "",
+			
+		},
+		{
+			id: "2",
+			text: "",
+			
+		},{
+			id: "3",
+			text: "",
+			
+		},{
+			id: "4",
+			text: "",
+			
+		},{
+			id: "5",
+			text: "",
+			
+		},{
+			id: "6",
+			text: "",
+			
+		},{
+			id: "7",
+			text: "",
+			
+		},{
+			id: "8",
+			text: "",
+			
+		},{
+			id: "9",
+			text: "",
+			
+		},{
+			id: "10",
+			text: "",
+			
+		},{
+			id: "11",
+			text: "",
+			
+		},{
+			id: "12",
+			text: "",
+			
+		}
+    ];
 
 $(function () {
     game = new Memory();
