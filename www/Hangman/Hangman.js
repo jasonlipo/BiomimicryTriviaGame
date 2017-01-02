@@ -21,7 +21,7 @@ var Hangman = function (e, w) {
         this.el.find('.word-container').empty();
         for (i=0; i<this.wordToGuess.length; i++) {
             this.revealedLetters.push("");
-            this.el.find('.word-container').append("<p class='letter'></p>");
+            this.el.find('.word-container').append("<p class='letter "+(this.wordToGuess[i]==" "?"space":"")+"'></p>");
         }
 
         this.el.find('.unguessed-letters').empty();
@@ -36,20 +36,6 @@ var Hangman = function (e, w) {
             guessedLetter = $(this).text();
             game.makeGuess(guessedLetter);
         }); 
-
-        $(document).keyup(function (e) {
-            keyCode = e.which;
-            if (keyCode >= 65 && keyCode <= 90) {
-                $(this).addClass("muted");
-                guessedLetter = String.fromCharCode(keyCode).toLowerCase();
-                game.el.find('.letter-choice').each(function () {
-                    if ($(this).html() == guessedLetter) {
-                        $(this).addClass('muted');
-                    }
-                });
-                game.makeGuess(guessedLetter);
-            }
-        });
 
     }
 
@@ -69,7 +55,7 @@ var Hangman = function (e, w) {
 
             $('.word-container').empty();
             for (i=0; i<this.revealedLetters.length; i++) {
-                this.el.find('.word-container').append("<p class='letter'>" + this.revealedLetters[i] + "</p>");
+                this.el.find('.word-container').append("<p class='letter "+(this.wordToGuess[i]==" "?"space":"")+"'>" + this.revealedLetters[i] + "</p>");
             }
 
             this.el.find('div.hangman-sprite').removeClass().addClass('hangman-sprite hangman-sprite' + this.wrong);
