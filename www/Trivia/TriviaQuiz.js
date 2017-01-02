@@ -1,5 +1,6 @@
 var FILENAME = 'TriviaHighScores.txt';
 document.addEventListener('deviceready', function () {
+    navigator.splashscreen.hide();
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
 }, false);
 

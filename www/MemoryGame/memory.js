@@ -14,7 +14,10 @@ var Memory = function (){
                         <img src='"+this.tiles[i].img+"'>\
                     </div>\
                 </div>\
-            </div>");        
+            </div>");
+            if ((i + 1) % 6 == 0) {
+                $(".wrapper").append("<br />");
+            }        
             a = this;
             $('.flipContainer').click(function (obj) {
                 a.clicked($(this));
