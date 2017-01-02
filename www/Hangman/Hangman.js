@@ -5,7 +5,7 @@ var Hangman = function (e, w) {
     this.initialise = function (el, words) {
         
         this.el = el;
-        this.listOfLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        this.listOfLetters = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ל","מ","נ","ס","ע","פ","צ","ק","ר","ש","ת"];
 
         this.guessedLetters = [];
         this.incorrectGuessedLetters = [];
