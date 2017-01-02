@@ -4,6 +4,7 @@ html, body {
     text-align: center;
     margin: 0;
     padding: 0;
+    background-image: url(media/Background%20\(2\).jpg);
 }
 .wrapper {
     padding: 2%;
@@ -19,7 +20,8 @@ html, body {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    border-radius: 5%;
+    border-radius: 25%;
+    border: 2px solid white;
 }
 .flipContainer.flip .tile{
 	transform: rotateY(180deg);
