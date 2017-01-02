@@ -2,7 +2,7 @@
 @font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
 @font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
 *{margin:0;padding:0}
-body{direction:rtl;font-family: "Hebrew-Regular";background: url(/Trivia/Background.png) no-repeat;background-size: cover;}
+body{direction:rtl;font-family: "Hebrew-Regular";background: url(Background.png) no-repeat;background-size: cover;}
 .wrapper{text-align:center;}
 .question{font-family: "Hebrew-Bold";font-size: 4vw;color: #fff;margin: 2vw 0 1vw;}
 .answers{width:80%;display:inline-block;margin-top: 2vw;}

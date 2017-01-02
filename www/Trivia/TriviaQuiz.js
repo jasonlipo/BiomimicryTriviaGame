@@ -126,7 +126,12 @@ var TriviaQuiz = function(t, x) {
     // Finish the game and show highscore table
     this.endGame = function () {
         readText(function (text) {
-            scores = JSON.parse(text);
+            if (text == "") {
+                scores = [];
+            }
+            else {
+                scores = JSON.parse(text);
+            }
             scores.sort(function (a, b) {
                 return b.score - a.score;
             });
@@ -153,7 +158,8 @@ var TriviaQuiz = function(t, x) {
                 }
                 $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
             }
-            if (scores.length < numberToDisplay) {
+            if (scores.length < numberToDisplay || (this.score > scores[numberToDisplay-1].score && !positionedScore)) {
+                positionedScore = false;
                 $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" /></div><div class="number">'+this.score+'</div></div>');
             }
             $('.scores').append('<br /><button class="finish">Finish</button>');
@@ -173,7 +179,7 @@ var TriviaQuiz = function(t, x) {
     // TriviaQuiz.reset
     // Re-start the game
     this.reset = function () {
-        location.href='/';
+        location.href='../';
     }
 
     this.initialise(t, x);
