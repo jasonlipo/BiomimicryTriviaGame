@@ -2,7 +2,7 @@
 @font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
 @font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
 *{margin:0;padding:0}
-body{direction:rtl;font-family: "Hebrew-Regular";background: url(Background.png) no-repeat;background-size: cover;}
+body{direction:rtl;font-family: "Hebrew-Regular";background: url(/Trivia/Background.png) no-repeat;background-size: cover;}
 .wrapper{text-align:center;}
 .question{font-family: "Hebrew-Bold";font-size: 4vw;color: #fff;margin: 2vw 0 1vw;}
 .answers{width:80%;display:inline-block;margin-top: 2vw;}
@@ -18,3 +18,10 @@ body{direction:rtl;font-family: "Hebrew-Regular";background: url(Background.png)
 .answer-3:before{content:"ד";}
 .scoreBox{background: rgba(0, 0, 0, 0.6);color: #fff;position: absolute;width: 100%;bottom: 0;font-size: 2.2vw;padding: 1vw 0;}
 .score{display: inline-block;margin: 0 14px;font-weight: bold;}
+.scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw}
+.scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
+.scores .row.s{background: #ffffbd;}
+.scores .row .highscore-name{font-size: 2.5vw;border: none;border-bottom: 0.3vw dotted #333;background: none;outline: none;}
+.scores .row .number{display:inline-block;font-size:3vw;margin-left:1vw}
+.scores .row .name{float:right;font-size:3vw;margin-right:1vw}
+.finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;}
