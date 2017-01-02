@@ -31,7 +31,7 @@ var Memory = function (){
             return array;
     }
     this.clicked = function(x) {
-        if (this.canFlip) {
+        if (this.canFlip && !x.hasClass("matched")) {
             $(x).addClass("clicked").addClass("flip");
             this.checkMatch();
         }
