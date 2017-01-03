@@ -1,3 +1,10 @@
+@font-face{font-family:"Hebrew-Light";src:url(Assistant-Light.ttf)}
+@font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
+@font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
+body{direction:rtl;font-family: "Hebrew-Regular";}
+.wrapper{text-align:center;}
+.question{font-family: "Hebrew-Bold";font-size: 4vw;color: #fff;margin: 2vw 0 1vw;}
+
 html, body {
 	height: 100%;
     text-align: center;
@@ -66,4 +73,31 @@ h1 {
     font-size: 4vw;
     color: #fff;
     margin: 2vw 0 2.5vw;
+}
+.modalWrapper {
+    height: 60%;
+}
+.modal {
+    width: 70%;
+    height: 100%;
+    background-color: cornflowerblue;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid whitesmoke;
+	box-shadow: 0 0 0.2vw 0.2vw rgba(0, 0, 0, 0.45);
+
+}
+.tries {
+    font-size: 3vw;
+}
+.restartButton {
+    height: 6vw;
+    width: 10vw;
+	box-shadow:inset 0px 0px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:0.2vw solid #ffaa22;
+	display:inline-block;
+	font-size:2vw;
 }

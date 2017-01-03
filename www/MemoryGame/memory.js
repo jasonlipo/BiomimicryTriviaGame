@@ -1,6 +1,10 @@
 var Memory = function (){
     
     this.initialise = function(tiles) {
+        this.modalWrapper = $(".modalWrapper");
+        this.modal = $(".modal");
+        this.hideModal();
+        this.count = 0;
         this.canFlip = true;
         this.tiles = this.shuffle(tiles);
         for (var i = 0; i < this.tiles.length; i++) {
@@ -34,6 +38,25 @@ var Memory = function (){
             }
             return array;
     }
+    
+    this.showModal = function() {
+        this.modalWrapper.show();
+		this.modal.fadeIn();
+    }
+    this.hideModal = function() {
+        this.modalWrapper.hide();
+        this.modal.hide();
+    }
+    this.win = function() {
+        this.canFlip = false;
+        $(".count").append(this.count);
+        setTimeout(function(){
+			this.$(".flipContainer").fadeOut();
+			}, 300);	
+        setTimeout(function() {
+            this.game.showModal();
+            },1000);
+    }
     this.clicked = function(x) {
         if (this.canFlip && !x.hasClass("matched")) {
             $(x).addClass("clicked").addClass("flip");
@@ -44,6 +67,7 @@ var Memory = function (){
     this.checkMatch = function() {
         if ($(".clicked").size() == 2) {
             this.canFlip = false;
+            this.count++;
             var idx1 = $(".clicked").eq(0).attr("key");
             var idx2 = $(".clicked").eq(1).attr("key");
             tile1 = this.tiles[idx1];
@@ -58,6 +82,10 @@ var Memory = function (){
                 $(".clicked").removeClass("clicked");
                 this.canFlip = true;
             }.bind(this), 500);
+        }
+        if ($(".matched").length == this.tiles.length) {
+            alert();
+            this.win();
         }
     }
 }
