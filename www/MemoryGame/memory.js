@@ -38,25 +38,6 @@ var Memory = function (){
             }
             return array;
     }
-    
-    this.showModal = function() {
-        this.modalWrapper.show();
-		this.modal.fadeIn();
-    }
-    this.hideModal = function() {
-        this.modalWrapper.hide();
-        this.modal.hide();
-    }
-    this.win = function() {
-        this.canFlip = false;
-        $(".count").append(this.count);
-        setTimeout(function(){
-			this.$(".flipContainer").fadeOut();
-			}, 300);	
-        setTimeout(function() {
-            this.game.showModal();
-            },1000);
-    }
     this.clicked = function(x) {
         if (this.canFlip && !x.hasClass("matched")) {
             $(x).addClass("clicked").addClass("flip");
@@ -74,7 +55,10 @@ var Memory = function (){
             tile2 = this.tiles[idx2];
             setTimeout(function () {
                 if (tile1.id == tile2.id) {
-                    $(".clicked").addClass("matched"); 
+                    $(".clicked").addClass("matched");
+                    if ($(".matched").size() == this.tiles.length) {
+                        this.win();
+        }
                 }
                 else {
                     $(".clicked").removeClass("flip");
@@ -83,10 +67,24 @@ var Memory = function (){
                 this.canFlip = true;
             }.bind(this), 500);
         }
-        if ($(".matched").length == this.tiles.length) {
-            alert();
-            this.win();
-        }
+    }
+    this.showModal = function() {
+        this.modalWrapper.show();
+		this.modal.fadeIn();
+    }
+    this.hideModal = function() {
+        this.modalWrapper.hide();
+        this.modal.hide();
+    }
+    this.win = function() {
+        this.canFlip = false;
+        $(".count").append(this.count);
+        setTimeout(function(){
+			this.$(".flipContainer").fadeOut();
+			}, 300);	
+        setTimeout(function() {
+            this.game.showModal();
+            },1000);
     }
 }
     
