@@ -1,6 +1,7 @@
 var Memory = function (){
     
     this.initialise = function(tiles) {
+        this.info = info;
         this.modalWrapper = $(".modalWrapper");
         this.modal = $(".modal");
         this.hideModal();
@@ -95,132 +96,132 @@ var tiles = [
 		{
 			name: "abalone",
 			img: "media/abalone.jpg",
-			id: 1,
+			id: 0,
 		},
 		{
 			name: "abaloneMatch",
 			img: "media/abaloneMatch.jpg",
-			id: 1
+			id: 0
 		},
 		{
 			name: "bees",
 			img:"media/bees.jpg",
-			id: 2
+			id: 1
 		},
 		{
 			name: "beesMatch",
 			img: "media/beesMatch.jpg",
-			id: 2
+			id: 1
 		},{
 			name: "bird",
 			img: "media/bird.jpg",
-			id: 3
+			id: 2
 		},
 		{
 			name: "birdMatch",
 			img: "media/birdMatch.jpg",
-			id: 3
+			id: 2
 		},
 		{
 			name: "elephant",
 			img:"media/elephant.jpg",
-			id: 4
+			id: 3
 		},
 		{
 			name: "elephantMatch",
 			img: "media/elephantMatch.jpg",
-			id: 4
+			id: 3
 		},{
 			name: "fish",
 			img: "media/fish.jpg",
-			id: 5
+			id: 4
 		},
 		{
 			name: "fishMatch",
 			img: "media/fishMatch.jpg",
-			id: 5
+			id: 4
 		},
 		{
 			name: "owl",
 			img:"media/owl.jpg",
-			id: 6
+			id: 5
 		},
 		{
 			name: "owlMatch",
 			img: "media/owlMatch.jpg",
+			id: 5
+		},{
+			name: "termites",
+			img: "media/termites.jpg",
 			id: 6
-		},{
-			name: "termites",
-			img: "media/termites.jpg",
-			id: 7
 		},
 		{
 			name: "termitesMatch",
 			img: "media/termitesMatch.jpg",
-			id: 7
+			id: 6
 		},
 		{
 			name: "velcro",
 			img:"media/velcro.jpg",
-			id: 8
+			id: 7
 		},
 		{
 			name: "velcroMatch",
 			img: "media/velcroMatch.jpg",
-			id: 8
+			id: 7
 		},{
 			name: "whale",
 			img: "media/whale.jpg",
-			id: 9
+			id: 8
 		},
 		{
 			name: "whaleMatch",
 			img: "media/whaleMatch.jpg",
-			id: 9
+			id: 8
 		},{
 			name: "termites",
 			img: "media/termites.jpg",
-			id: 10
+			id: 9
 		},
 		{
 			name: "termitesMatch",
 			img: "media/termitesMatch.jpg",
-			id: 10
+			id: 9
 		},
 		{
 			name: "velcro",
 			img:"media/velcro.jpg",
-			id: 11
+			id: 10
 		},
 		{
 			name: "velcroMatch",
 			img: "media/velcroMatch.jpg",
-			id: 11
+			id: 10
 		},{
 			name: "whale",
 			img: "media/whale.jpg",
-			id: 12
+			id: 11
 		},
 		{
 			name: "whaleMatch",
 			img: "media/whaleMatch.jpg",
-			id: 12
+			id: 11
 		}			
 	];
 
 var info = [
 		{
 			id: "1",
-			text: "",
+			text: "test",
 			
 		},
 		{
 			id: "2",
-			text: "",
+			text: "test",
 			
 		},{
 			id: "3",
-			text: "",
+			text: "test",
 			
 		},{
 			id: "4",

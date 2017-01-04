@@ -85,12 +85,11 @@ h1 {
     margin: 0 auto;
     border: 2px solid whitesmoke;
 	box-shadow: 0 0 0.2vw 0.2vw rgba(0, 0, 0, 0.45);
-
 }
 .tries {
     font-size: 3vw;
 }
-.restartButton {
+Button {
     height: 6vw;
     width: 10vw;
 	box-shadow:inset 0px 0px 0px 0px #fff6af;
@@ -98,6 +97,7 @@ h1 {
 	background-color:#ffec64;
 	border-radius:6px;
 	border:0.2vw solid #ffaa22;
-	display:inline-block;
 	font-size:2vw;
+    margin: 0 2%;    
+    display:inline-block;
 }
