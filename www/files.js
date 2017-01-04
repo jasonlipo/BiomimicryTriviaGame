@@ -10,9 +10,12 @@ function gotFileEntry(fileEntry) {
 function gotFileWriter(fileWriter) {
 	fh.writer = fileWriter;
 }
-function saveText(val) {
+function saveText(val, callback) {
 	fh.writer.onwriteend = function (evt) {
 		fh.writer.seek(0);
+        if (callback) {
+            callback();
+        }
 	}
 	fh.writer.write(val);
 }

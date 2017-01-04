@@ -1,3 +1,9 @@
+var FILENAME = 'HangmanHighScores.txt';
+document.addEventListener('deviceready', function () {
+    navigator.splashscreen.hide();
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
+}, false);
+
 var Hangman = function (e, w) {
     
     // Hangman.initialise
@@ -17,10 +23,9 @@ var Hangman = function (e, w) {
         this.revealedLetters = [];
 
         // Set up the DOM
-        this.el.find('.incorrect-guesses h3').empty().append("Incorrect Guesses: ");
         this.el.find('.word-container').empty();
         for (i=0; i<this.wordToGuess.length; i++) {
-            this.revealedLetters.push("");
+            this.revealedLetters.push(this.wordToGuess[i]==" "?" ":"");
             this.el.find('.word-container').append("<p class='letter "+(this.wordToGuess[i]==" "?"space":"")+"'></p>");
         }
 
@@ -37,6 +42,30 @@ var Hangman = function (e, w) {
             game.makeGuess(guessedLetter);
         }); 
 
+        this.startTimer();
+
+    }
+
+    this.startTimer = function () {
+        this.timer = 0;
+        this.timerInterval = setInterval(this.incrementTimer.bind(this), 1000);
+    }
+
+    this.incrementTimer = function () {
+        this.timer++;
+        this.showTimer();
+    }
+
+    this.secondsToString = function (s) {
+        minutes = Math.floor(s/60);
+        if (minutes.toString().length == 1) { minutes = "0" + minutes; }
+        seconds = s % 60;
+        if (seconds.toString().length == 1) { seconds = "0" + seconds; }
+        return minutes + " : " + seconds;
+    }
+
+    this.showTimer = function () {
+        $('.timer').html(this.secondsToString(this.timer));
     }
 
     // Hangman.makeGuess
@@ -50,19 +79,13 @@ var Hangman = function (e, w) {
                 this.revealLetters(guessedLetter);
             } else {
                 this.incorrectGuessedLetters.push(guessedLetter);
-                this.wrong++;
+                this.timer += 30;
+                this.showTimer();
             }
 
             $('.word-container').empty();
             for (i=0; i<this.revealedLetters.length; i++) {
                 this.el.find('.word-container').append("<p class='letter "+(this.wordToGuess[i]==" "?"space":"")+"'>" + this.revealedLetters[i] + "</p>");
-            }
-
-            this.el.find('div.hangman-sprite').removeClass().addClass('hangman-sprite hangman-sprite' + this.wrong);
-
-            this.el.find('.incorrect-guesses h3').empty().append("Incorrect Guesses: ");
-            for (i=0; i<this.incorrectGuessedLetters.length; i++) {
-                this.el.find('.incorrect-guesses h3').append(this.incorrectGuessedLetters[i] + " ");
             }
 
             if (this.isOver()) {
@@ -109,24 +132,62 @@ var Hangman = function (e, w) {
     // Hangman.isOver
     // Either a win or a lose results in the game ending
     this.isOver = function(hangman, wordToGuess) {
-        return this.hangmanDead() || this.isRevealed();
-    }
-
-    // Hangman.hangmanDead
-    // The game ends when the user guesses 7 incorrect letters
-    this.hangmanDead = function () {
-        return this.wrong >= 7;
+        return this.isRevealed();
     }
 
     // Hangman.finish
-    // Notify the user if they have won or lost the gmae
+    // Finish the game and show highscore table
     this.finish = function () {
-        if (this.hangmanDead()) {
-            alert("You lose");
-        }
-        else if (this.isRevealed()) {
-            alert("You win!");
-        }
+        clearInterval(this.timerInterval);
+        readText(function (text) {
+            numberToDisplay = 5;
+            if (text == "") {
+                scores = [];
+            }
+            else {
+                scores = JSON.parse(text);
+            }
+            scores.push({
+                name: "...",
+                time: this.timer
+            })
+            scores.sort(function (a, b) {
+                return a.time - b.time;
+            });
+            scores = scores.splice(0, numberToDisplay);
+            $('.title h1').html('ציוני');
+            $('.hangman-game').after('<div class="scores"></div>');
+            $('.hangman-game').hide();
+            for (i=0; i<scores.length; i++) {
+                if (scores[i].name == "...") {
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
+                }
+                else {
+                    $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
+                }
+            }
+            $('.scores').append('<br /><button class="finish">Finish</button>');
+            $('.finish').click(function () {
+                if ($('.highscore-name').size() > 0) {
+                    name = $('.highscore-name').val();
+                    i = parseInt($('.highscore-name').attr('id'));
+                    scores[i].name = name;
+                    saveText(JSON.stringify(scores), function () {
+                        this.reset();
+                    }.bind(this));
+                }
+                else {
+                    this.reset();
+                }
+            }.bind(this));
+        }.bind(this));
+
+    }
+
+    // Hangman.reset
+    // Re-start the game
+    this.reset = function () {
+        location.href='../';
     }
 
     this.initialise(e, w);

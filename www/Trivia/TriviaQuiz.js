@@ -136,7 +136,7 @@ var TriviaQuiz = function(t, x) {
             scores.sort(function (a, b) {
                 return b.score - a.score;
             });
-            $('.question').html('Highscore Leaderboard');
+            $('.question').html('ציוני');
             $('.answers').after('<div class="scores"></div>');
             $('.answers').hide();
             numberToDisplay = 5;
@@ -159,7 +159,7 @@ var TriviaQuiz = function(t, x) {
                 }
                 $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
             }
-            if (scores.length < numberToDisplay || (this.score > scores[numberToDisplay-1].score && !positionedScore)) {
+            if ((scores.length < numberToDisplay && !positionedScore) || (this.score > scores[numberToDisplay-1].score && !positionedScore)) {
                 positionedScore = false;
                 $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" /></div><div class="number">'+this.score+'</div></div>');
             }

@@ -1,3 +1,8 @@
+@font-face{font-family:"Hebrew-Light";src:url(Assistant-Light.ttf)}
+@font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
+@font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
+*{margin:0;padding:0}
+body{direction:rtl;font-family:"Hebrew-Regular";background:url(bg.jpg) no-repeat;background-size:cover}
 .hangman-sprite0{background-position:0 0;width:300px;height:400px}
 .hangman-sprite1{background-position:0 -450px;width:300px;height:400px}
 .hangman-sprite2{background-position:0 -900px;width:300px;height:400px}
@@ -9,19 +14,28 @@
 .hangman-sprite{background-image:url(hangman.png);width:300px;height:400px;opacity:.7;border-radius:20px}
 .header{margin:20px auto 40px}
 .sub-title{font-size:.6em;font-weight:100;letter-spacing:1px}
-body{background-image:url(bg.png)}
-.letter{border-bottom:2px solid #000;font-size:2em;height:50px;width:30px;text-align:center;float:left;margin-right:10px}
-.letter.space{border:none;}
+.letter{border-bottom:2px solid #000;font-size:3vw;height:4vw;width:2vw;text-align:center;display:inline-block;margin-right:.8vw;vertical-align:top}
+.letter.space{border:none}
 .red{color:#c0392b}
 .green{color:#2ecc71}
-.muted{color: grey !important;cursor: default !important;}
+.muted{color:grey!important;cursor:default!important}
 button.play-again{display:none;margin-top:20px}
-.unguessed-letters{height:150px}
+.unguessed-letters{text-align:center;margin:2vw}
 .unguessed-letters p{text-align:center}
-.letter-choice{margin:10px;font-size:2em;float:left;cursor:pointer}
-.letter-choice:hover{color:#3498db}
+.letter-choice{margin:1vw;font-size:3em;display:inline-block;cursor:pointer}
+.letter-choice:hover{color:#fff}
 .incorrect-guesses h4{float:left}
 .light-weight{font-weight:100}
 .dropdown-menu > li{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#333;white-space:nowrap}
 .dropdown-menu > li:hover,.dropdown-menu > li:focus{color:#fff;text-decoration:none;background-color:#428bca}
 ul hr{margin:5px auto}
+.title h1{font-size:5vw;color:#fff;font-family:"Hebrew-Bold";font-weight:400;text-align:center;margin:2vw}
+.hangman-game{background:rgba(255,255,255,0.59);text-align:center}
+.timer{color:#a01a1a;font-weight:700;font-size:6vw;font-family:"Hebrew-Bold";margin:2vw 0;display:inline-block;direction: ltr;}
+.scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw;text-align: center;}
+.scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
+.scores .row.s{background: #ffffbd;}
+.scores .row .highscore-name{font-size: 2.5vw;border: none;border-bottom: 0.3vw dotted #333;background: none;outline: none;}
+.scores .row .number{display:inline-block;font-size:3vw;margin-left:1vw;direction: ltr;}
+.scores .row .name{float:right;font-size:3vw;margin-right:1vw}
+.finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;}
