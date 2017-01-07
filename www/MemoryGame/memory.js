@@ -1,3 +1,10 @@
+var FILENAME = 'MemoryHighScores.txt';
+document.addEventListener('deviceready', function () {
+    navigator.splashscreen.hide();
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
+}, false);
+
+
 var Memory = function (){
     
     this.initialise = function(tiles) {
@@ -91,12 +98,60 @@ var Memory = function (){
         this.canFlip = false;
         $(".count").append(this.count);
         setTimeout(function(){
-			this.$(".flipContainer").fadeOut();
-			}, 300);	
+			$(".flipContainer").fadeOut();
+		}, 300);	
         setTimeout(function() {
-            this.game.showModal();
-            },1000);
+            this.showModal();
+            this.highscores();
+        }.bind(this),1000);
     }
+    this.highscores = function () {
+        readText(function (text) {
+            numberToDisplay = 5;
+            if (text == "") {
+                scores = [];
+            }
+            else {
+                scores = JSON.parse(text);
+            }
+            scores.push({
+                name: "...",
+                flips: this.count
+            })
+            scores.sort(function (a, b) {
+                return a.flips - b.flips;
+            });
+            scores = scores.splice(0, numberToDisplay);
+            $('.modal').append('<div class="scores"></div>');
+            for (i=0; i<scores.length; i++) {
+                if (scores[i].name == "...") {
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+scores[i].flips+'</div></div>');
+                }
+                else {
+                    $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].flips+'</div></div>');
+                }
+            }
+            $('.scores').append('<button class="finish">שחק שוב</button>');
+            $('.finish').click(function () {
+                if ($('.highscore-name').size() > 0) {
+                    name = $('.highscore-name').val();
+                    i = parseInt($('.highscore-name').attr('id'));
+                    scores[i].name = name;
+                    saveText(JSON.stringify(scores), function () {
+                        this.reset();
+                    }.bind(this));
+                }
+                else {
+                    this.reset();
+                }
+            }.bind(this));
+        }.bind(this));
+
+    }
+    this.reset = function () {
+        location.href='../';
+    }
+
 }
     
 

@@ -30,7 +30,7 @@ button.play-again{display:none;margin-top:20px}
 .dropdown-menu > li:hover,.dropdown-menu > li:focus{color:#fff;text-decoration:none;background-color:#428bca}
 ul hr{margin:5px auto}
 .title h1{font-size:5vw;color:#fff;font-family:"Hebrew-Bold";font-weight:400;text-align:center;margin:2vw}
-.hangman-game{background:rgba(255,255,255,0.59);text-align:center}
+.hangman-game{background:rgba(255,255,255,0.59);text-align:center;margin: 2vw 0;display: inline-block;width: 100%;}
 .timer{color:#a01a1a;font-weight:700;font-size:6vw;font-family:"Hebrew-Bold";margin:2vw 0;display:inline-block;direction: ltr;}
 .scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw;text-align: center;}
 .scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
@@ -39,3 +39,5 @@ ul hr{margin:5px auto}
 .scores .row .number{display:inline-block;font-size:3vw;margin-left:1vw;direction: ltr;}
 .scores .row .name{float:right;font-size:3vw;margin-right:1vw}
 .finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;}
+.back_button, .start_button{height: 6vw;width: 10vw;box-shadow:inset 0px 0px 0px 0px #fff6af;background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);background-color:#ffec64;border-radius:6px;border:0.2vw solid #ffaa22;font-size:2vw;margin: 2vw 3vw;position: absolute;left: 0;top: 0;}
+.start_button{position:relative;}

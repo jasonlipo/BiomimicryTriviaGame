@@ -19,7 +19,7 @@ var Hangman = function (e, w) {
 
         // Initialise the new word
         this.listOfWords = words;
-        this.wordToGuess = this.listOfWords[Math.floor(Math.random() * this.listOfWords.length)];
+        this.wordToGuess = this.listOfWords[Math.round(Math.random() * this.listOfWords.length)];
         this.revealedLetters = [];
 
         // Set up the DOM
@@ -33,6 +33,14 @@ var Hangman = function (e, w) {
         for (i=0; i<this.listOfLetters.length; i++) {
             this.el.find(".unguessed-letters").append("<span class='letter-choice'>" + this.listOfLetters[i] + "</span>");
         }
+
+        $('.start_button').click(this.start.bind(this));
+
+    }
+
+    this.start = function () {
+
+        $('.start_button').hide();
 
         // Guess a letter
         game = this;
@@ -96,18 +104,47 @@ var Hangman = function (e, w) {
 
     }
 
+    this.synonymLetters = function (letter) {
+        synonyms = [letter];
+        switch (letter) {
+            case "כ‎":
+            synonyms.push("ך");
+            break;
+            case "מ":
+            synonyms.push("ם");
+            break;
+            case "נ‎":
+            synonyms.push("ן‎");
+            break;
+            case "פ":
+            synonyms.push("ף");
+            break;
+            case "צ":
+            synonyms.push("ץ");
+            break;
+        }
+        return synonyms;
+    }
+
     // Hangman.wordHasLetter
     // Returns true if the word contains the queried letter
     this.wordHasLetter = function(guessedLetter) {
-        return this.wordToGuess.indexOf(guessedLetter) > -1;
+        letters = this.synonymLetters(guessedLetter);
+        for (var i=0; i<letters.length; i++) {
+            if (this.wordToGuess.indexOf(letters[i]) > -1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Hangman.revealLetters
     // Add the guessedLetter into the revealedLetters array at the right index
     this.revealLetters = function(guessedLetter) {
+        synonyms = this.synonymLetters(guessedLetter);
         for (i=0; i<this.revealedLetters.length; i++) {
-            if (guessedLetter == this.wordToGuess[i]) {
-                this.revealedLetters[i] = guessedLetter;
+            if (synonyms.indexOf(this.wordToGuess[i]) > -1) {
+                this.revealedLetters[i] = this.wordToGuess[i];
             }
         }
     }
@@ -160,7 +197,7 @@ var Hangman = function (e, w) {
             $('.hangman-game').hide();
             for (i=0; i<scores.length; i++) {
                 if (scores[i].name == "...") {
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
                 }
                 else {
                     $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
