@@ -9,7 +9,7 @@ document.addEventListener('deviceready', function () {
         alert("fileEntry is file?" + fileEntry.isFile.toString());
         // fileEntry.name == 'someFile.txt'
         // fileEntry.fullPath == '/someFile.txt'
-        writeFile(fileEntry, fail);
+        writeFile(fileEntry, null);
 
     }, fail);
 
@@ -50,7 +50,6 @@ function readFile(fileEntry) {
 
         reader.onloadend = function() {
             alert("Successful file read: " + this.result);
-            displayFileData(fileEntry.fullPath + ": " + this.result);
         };
 
         reader.readAsText(file);
