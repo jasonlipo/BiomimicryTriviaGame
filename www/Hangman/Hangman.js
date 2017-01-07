@@ -19,8 +19,7 @@ var Hangman = function (e, w) {
 
         // Initialise the new word
         this.listOfWords = words;
-        //this.wordToGuess = this.listOfWords[Math.round(Math.random() * this.listOfWords.length)];
-        this.wordToGuess = this.listOfWords[8]
+        this.wordToGuess = this.listOfWords[Math.round(Math.random() * this.listOfWords.length)];
         this.revealedLetters = [];
 
         // Set up the DOM
