@@ -116,7 +116,7 @@ button {
 .infoOverlay {
     margin: 0 auto;
     width: 70%;
-    height: auto;
+    height: 90%;
     background-color: cornflowerblue;
 }
 #infoText {
@@ -134,6 +134,7 @@ button {
     height: 4vw;
     z-index: 2;
     font-size: 2.5vw;
+    color: #1a0f00;
 }
 .scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw;text-align: center;}
 .scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
