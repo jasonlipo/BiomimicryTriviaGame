@@ -105,14 +105,14 @@ Button {
     position: absolute;
     top: 0;
     left: 0;
-    height: 80%;
+    height: 85%;
     width: 100%;
     padding-top: 4vw;
 }
 .infoOverlay {
     margin: 0 auto;
     width: 70%;
-    height: 100%;
+    height: auto;
     background-color: cornflowerblue;
 }
 #infoText {
