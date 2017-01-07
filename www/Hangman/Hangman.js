@@ -1,5 +1,5 @@
 var FILENAME = 'HangmanHighScores.txt';
-//document.addEventListener('deviceready', function () {
+document.addEventListener('deviceready', function () {
     //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
@@ -9,12 +9,16 @@ var FILENAME = 'HangmanHighScores.txt';
         alert("fileEntry is file?" + fileEntry.isFile.toString());
         // fileEntry.name == 'someFile.txt'
         // fileEntry.fullPath == '/someFile.txt'
-        writeFile(fileEntry, null);
+        writeFile(fileEntry, fail);
 
-    }, null);
+    }, fail);
 
-}, null);
-//}, false);
+}, fail);
+}, false);
+
+function fail(error) {
+        alert('error' + error.code);
+    }
 
 function writeFile(fileEntry, dataObj) {
     // Create a FileWriter object for our FileEntry (log.txt).
