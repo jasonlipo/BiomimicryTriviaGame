@@ -1,6 +1,5 @@
 var FILENAME = 'MemoryHighScores.txt';
 document.addEventListener('deviceready', function () {
-    navigator.splashscreen.hide();
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
 }, false);
 

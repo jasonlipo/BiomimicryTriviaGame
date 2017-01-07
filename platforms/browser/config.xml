@@ -6,11 +6,11 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>Biomimicry Game</name>
+    <name>Biomimicry</name>
     <description>
         3 mini-games about biomimicry
     </description>
-    <author email="jlipowicz@hotmail.co.uk" href="http://jasonlipowicz.com">
+    <author email="jlipowicz@hotmail.co.uk" href="http://www.jasonlipowicz.com">
         Jason Lipowicz, Boaz Francis
     </author>
 </widget>
