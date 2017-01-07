@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.biomimicry.game"
     versionCode = "10"
     version     = "1.0.0" >
     
-    <name>Biomimicry Game</name>
+    <name>Biomimicry</name>
+    
     <description>
         3 mini-games about biomimicry
     </description>
-    <author email="jlipowicz@hotmail.co.uk" href="http://jasonlipowicz.com">
+    
+    <author email="jlipowicz@hotmail.co.uk" href="http://www.jasonlipowicz.com">
         Jason Lipowicz, Boaz Francis
     </author>
        
-     <platform name="android">
+    <platform name="android">
         <preference name="orientation" value="landscape" />
         <preference name="android-build-tool" value="ant|gradle" />
         <preference name="android-minSdkVersion" value="10" />
@@ -27,10 +30,5 @@
         <icon density="xxhdpi" src="www/img/xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/img/xxxhdpi-icon.png" />
     </platform>
-
-<feature name="File">
-    <param name="android-package" value="org.apache.cordova.file.FileUtils" />
-</feature>
-
 
 </widget>
