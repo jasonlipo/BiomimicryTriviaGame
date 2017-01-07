@@ -34,6 +34,14 @@ var Hangman = function (e, w) {
             this.el.find(".unguessed-letters").append("<span class='letter-choice'>" + this.listOfLetters[i] + "</span>");
         }
 
+        $('.start_button').click(this.start.bind(this));
+
+    }
+
+    this.start = function () {
+
+        $('.start_button').hide();
+        
         // Guess a letter
         game = this;
         this.el.find(".letter-choice").click(function() {
