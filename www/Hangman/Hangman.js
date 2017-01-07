@@ -19,7 +19,8 @@ var Hangman = function (e, w) {
 
         // Initialise the new word
         this.listOfWords = words;
-        this.wordToGuess = this.listOfWords[Math.floor(Math.random() * this.listOfWords.length)];
+        //this.wordToGuess = this.listOfWords[Math.round(Math.random() * this.listOfWords.length)];
+        this.wordToGuess = this.listOfWords[8]
         this.revealedLetters = [];
 
         // Set up the DOM
@@ -96,18 +97,47 @@ var Hangman = function (e, w) {
 
     }
 
+    this.synonymLetters = function (letter) {
+        synonyms = [letter];
+        switch (letter) {
+            case "כ‎":
+            synonyms.push("ך");
+            break;
+            case "מ":
+            synonyms.push("ם");
+            break;
+            case "נ‎":
+            synonyms.push("ן‎");
+            break;
+            case "פ":
+            synonyms.push("ף");
+            break;
+            case "צ":
+            synonyms.push("ץ");
+            break;
+        }
+        return synonyms;
+    }
+
     // Hangman.wordHasLetter
     // Returns true if the word contains the queried letter
     this.wordHasLetter = function(guessedLetter) {
-        return this.wordToGuess.indexOf(guessedLetter) > -1;
+        letters = this.synonymLetters(guessedLetter);
+        for (var i=0; i<letters.length; i++) {
+            if (this.wordToGuess.indexOf(letters[i]) > -1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Hangman.revealLetters
     // Add the guessedLetter into the revealedLetters array at the right index
     this.revealLetters = function(guessedLetter) {
+        synonyms = this.synonymLetters(guessedLetter);
         for (i=0; i<this.revealedLetters.length; i++) {
-            if (guessedLetter == this.wordToGuess[i]) {
-                this.revealedLetters[i] = guessedLetter;
+            if (synonyms.indexOf(this.wordToGuess[i]) > -1) {
+                this.revealedLetters[i] = this.wordToGuess[i];
             }
         }
     }
