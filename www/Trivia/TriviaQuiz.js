@@ -127,52 +127,45 @@ var TriviaQuiz = function(t, x) {
     // Finish the game and show highscore table
     this.endGame = function () {
         readText(function (text) {
+            numberToDisplay = 5;
             if (text == "") {
                 scores = [];
             }
             else {
                 scores = JSON.parse(text);
             }
+            scores.push({
+                name: "...",
+                score: this.score
+            })
             scores.sort(function (a, b) {
                 return b.score - a.score;
             });
+            scores = scores.splice(0, numberToDisplay);
             $('.question').html('ציוני');
             $('.answers').after('<div class="scores"></div>');
             $('.answers').hide();
-            numberToDisplay = 5;
-            if (scores.length >= numberToDisplay) {
-                if (this.score > scores[numberToDisplay-1].score) {
-                    rowsToDisplay = numberToDisplay-1;
+            for (i=0; i<scores.length; i++) {
+                if (scores[i].name == "...") {
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+this.score+'</div></div>');
                 }
                 else {
-                    rowsToDisplay = numberToDisplay;
+                    $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
                 }
-            }
-            else {
-                rowsToDisplay = scores.length;
-            }
-            positionedScore = false;
-            for (i=0; i<rowsToDisplay; i++) {
-                if (this.score > scores[i].score && !positionedScore) {
-                    positionedScore = true;
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" /></div><div class="number">'+this.score+'</div></div>');
-                }
-                $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
-            }
-            if ((scores.length < numberToDisplay && !positionedScore) || (this.score > scores[numberToDisplay-1].score && !positionedScore)) {
-                positionedScore = false;
-                $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" /></div><div class="number">'+this.score+'</div></div>');
             }
             $('.scores').append('<br /><button class="finish">Finish</button>');
             $('.finish').click(function () {
-                name = $('.highscore-name').val();
-                new_scores = scores.splice(0, numberToDisplay - 1);
-                new_scores.push({
-                    name: name,
-                    score: this.score
-                })
-                saveText(JSON.stringify(new_scores));
-                this.reset();
+                if ($('.highscore-name').size() > 0) {
+                    name = $('.highscore-name').val();
+                    i = parseInt($('.highscore-name').attr('id'));
+                    scores[i].name = name;
+                    saveText(JSON.stringify(scores), function () {
+                        this.reset();
+                    }.bind(this));
+                }
+                else {
+                    this.reset();
+                }
             }.bind(this));
         }.bind(this));
     }

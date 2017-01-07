@@ -41,7 +41,7 @@ var Hangman = function (e, w) {
     this.start = function () {
 
         $('.start_button').hide();
-        
+
         // Guess a letter
         game = this;
         this.el.find(".letter-choice").click(function() {
@@ -197,7 +197,7 @@ var Hangman = function (e, w) {
             $('.hangman-game').hide();
             for (i=0; i<scores.length; i++) {
                 if (scores[i].name == "...") {
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
                 }
                 else {
                     $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');

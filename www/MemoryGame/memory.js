@@ -125,7 +125,7 @@ var Memory = function (){
             $('.modal').append('<div class="scores"></div>');
             for (i=0; i<scores.length; i++) {
                 if (scores[i].name == "...") {
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" id="'+i+'" /></div><div class="number">'+scores[i].flips+'</div></div>');
+                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+scores[i].flips+'</div></div>');
                 }
                 else {
                     $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].flips+'</div></div>');
