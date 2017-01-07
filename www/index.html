@@ -7,7 +7,7 @@
 
         document.addEventListener('deviceready', function () {
 
-            window.requestLocalFileSystemURL(cordova.file.cacheDirectory, function (fs) {
+            window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function (fs) {
 
                 alert('file system open: ' + fs.name);
                 createFile(dirEntry, "fileToAppend.txt", false);
