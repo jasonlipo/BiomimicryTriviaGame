@@ -46,14 +46,12 @@ var Memory = function (){
         }
     }
     this.showInfo = function(text) {
-        this.canFlip = false;
         $("#infoText").append(text);
         $(".infoWrapper").css("z-index", 10);
         $(".closeInfo").on("click", this.buttonClick);
     }
     this.buttonClick = function() {
-        console.log("test");
-        this.canFlip = true;
+        a.canFlip = true;
         $("#infoText").eq(0).empty();
         $(".infoWrapper").css("z-index", -1);
     }
@@ -75,9 +73,9 @@ var Memory = function (){
                 }
                 else {
                     $(".clicked").removeClass("flip");
+                    this.canFlip = true;
                 }
                 $(".clicked").removeClass("clicked");
-                this.canFlip = true;
             }.bind(this), 500);
         }
     }
