@@ -81,7 +81,7 @@ h1.winner{
     height: 60%;
 }
 .modal, .infoOverlay {
-    width: 70%;
+    width: 75%;
     background-color: cornflowerblue;
     margin: 0 auto;
     border: 2px solid whitesmoke;

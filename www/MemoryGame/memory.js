@@ -254,22 +254,22 @@ var tiles = [
 			id: 9
 		},
 		{
-			name: "velcro",
-			img:"media/velcro.jpg",
+			name: "mosquito",
+			img:"media/mosquito.jpg",
 			id: 10
 		},
 		{
-			name: "velcroMatch",
-			img: "media/velcroMatch.jpg",
+			name: "mosquitoMatch",
+			img: "media/mosquitoMatch.jpg",
 			id: 10
 		},{
-			name: "whale",
-			img: "media/whale.jpg",
+			name: "autumn",
+			img: "media/autumn.jpg",
 			id: 11
 		},
 		{
-			name: "whaleMatch",
-			img: "media/whaleMatch.jpg",
+			name: "autumnMatch",
+			img: "media/autumnMatch.jpg",
 			id: 11
 		}			
 	];
@@ -316,11 +316,11 @@ var info = [
 			
 		},{
 			id: "11",
-			text: "",
+			text: "מחטים ומזרקים שגורמים מינימום כאב, פותחו בהשראת מבנה נקבת היתוש. לעתים קרובות אנחנו מזהים עקיצת יתוש רק אחרי זמן רב, כי המבנה הייחודי של ראש נקבת היתוש מאפשר לה למצוץ דם בעת העקיצה ואף להעביר חומר מונע קרישת דם למקום העקיצה.",
 			
 		},{
 			id: "12",
-			text: "test12",
+			text: "בהשראת עלי השלכת, שנושרים ומתחלפים לאורך תקופה ממושכת ולא בבת אחת, פותחו שטיחים מודולריים. במקום להחליף שטיח גדול בכל החדר בגלל שנוצרו בו כתמים, ניתן לבודד רק את החלקים במשטח שזקוקים להחלפה או לתיקון ולא את המשטח כולו. כך אוספים את האריחים הפגומים, וממחזרים אותם מספר רב של פעמים.",
 			
 		}
     ];
