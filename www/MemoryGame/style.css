@@ -81,7 +81,6 @@ h1 {
     width: 70%;
     height: 100%;
     background-color: cornflowerblue;
-    position: relative;
     margin: 0 auto;
     border: 2px solid whitesmoke;
 	box-shadow: 0 0 0.2vw 0.2vw rgba(0, 0, 0, 0.45);
@@ -123,4 +122,12 @@ Button {
 .textWrap {
     width: 90%;
     margin: 0 auto;
+}
+.home {
+    position: absolute;
+    display: inline-block;
+    left: 4.5vw;
+    height: 4vw;
+    z-index: 2;
+    font-size: 2.5vw;
 }
