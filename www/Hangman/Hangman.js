@@ -1,5 +1,5 @@
 var FILENAME = 'HangmanHighScores.txt';
-document.addEventListener('deviceready', function () {
+//document.addEventListener('deviceready', function () {
     //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
@@ -14,7 +14,7 @@ document.addEventListener('deviceready', function () {
     }, null);
 
 }, null);
-}, false);
+//}, false);
 
 function writeFile(fileEntry, dataObj) {
     // Create a FileWriter object for our FileEntry (log.txt).
