@@ -1,0 +1,5 @@
+@font-face{font-family:"Hebrew-Light";src:url(Trivia/Assistant-Light.ttf)}
+@font-face{font-family:"Hebrew-Regular";src:url(Trivia/Assistant-Regular.ttf)}
+@font-face{font-family:"Hebrew-Bold";src:url(Trivia/Assistant-ExtraBold.ttf)}
+*{margin:0;padding:0}
+body{direction:rtl;font-family: "Hebrew-Regular";background: url(Trivia/bg.png) no-repeat;background-size: cover;text-align:center;}
