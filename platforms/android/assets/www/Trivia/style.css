@@ -1,0 +1,28 @@
+@font-face{font-family:"Hebrew-Light";src:url(Assistant-Light.ttf)}
+@font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
+@font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
+*{margin:0;padding:0}
+body{direction:rtl;font-family: "Hebrew-Regular";background: url(bg.png) no-repeat;background-size: cover;}
+.wrapper{text-align:center;}
+.question{font-family: "Hebrew-Bold";font-size: 3vw;color: #fff;margin: 2vw 15vw 1vw;height: 10vw;}
+.answers{width:80%;display:inline-block;margin-top: 2vw;}
+.answers div{float:right;width: 47%;box-sizing: border-box;font-size: 1.7vw;background: #fff;height: 14vw;padding: 2.5vw 6vw 0 3vw;box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.38);border-radius: 20px;position: relative;}
+.answers div.wrong{background: #ffa9a9;}
+.answers div.right{background: #81e881;}
+.answers div:before {height: 4vw;width: 100px;position:absolute;background: rgb(107, 121, 142);color: #fff;font-size: 2.6vw;right: -15px;top: -15px;border-radius: 20px;}
+.answer-2 {clear:both;margin: 0 0 50px 6%;}
+.answer-0 {margin: 0 0 3vw 6%;}
+.answer-0:before{content:"א";}
+.answer-1:before{content:"ב";}
+.answer-2:before{content:"ג";}
+.answer-3:before{content:"ד";}
+.scoreBox{background: rgba(0, 0, 0, 0.6);color: #fff;position: absolute;width: 100%;bottom: 0;font-size: 2.2vw;padding: 1vw 0;}
+.score{display: inline-block;margin: 0 14px;font-weight: bold;}
+.scores{background:rgba(255,255,255,0.68);margin: -3vw 7vw 0;padding:2vw;}
+.scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
+.scores .row.s{background: #ffffbd;}
+.scores .row .highscore-name{font-size: 2.5vw;border: none;border-bottom: 0.3vw dotted #333;background: none;outline: none;}
+.scores .row .number{display:inline-block;font-size:3vw;margin-left:1vw}
+.scores .row .name{float:right;font-size:3vw;margin-right:1vw}
+.finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;}
+.back_button{height: 6vw;width: 10vw;box-shadow:inset 0px 0px 0px 0px #fff6af;background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);background-color:#ffec64;border-radius:6px;border:0.2vw solid #ffaa22;font-size:2vw;margin: 2vw 3vw;position: absolute;left: 0;top: 0;}

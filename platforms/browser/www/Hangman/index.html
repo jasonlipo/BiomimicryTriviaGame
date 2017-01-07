@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Hangman</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="/cordova.js"></script>
+	    <script type="text/javascript" src="/files.js"></script>
+		<script src="jquery.min.js"></script>
+        <script src="Hangman.js"></script>
+		<script src="client.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" media="all">
+	</head>
+  <body>
+    <div class="container">
+        
+        <button class="back_button" onclick="window.location='../index.html'">חזור</button>
+
+        <div class="title">
+            <h1>נחש את המילה</h1>
+        </div>
+
+      <div class="hangman-game">
+
+        <div class="unguessed-letters"></div>
+        
+        <div class="word-container">
+            <p class="letter"></p>
+        </div>
+        <br style="clear:both;" />
+
+        <div class="timer">
+            00 : 00
+        </div>
+
+        <br /><br />
+        <button class="start_button">התחל</button>
+
+      </div>
+
+    </div>
+
+	</body>
+</html>

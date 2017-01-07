@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../cordova.js"></script>
+	<script type="text/javascript" src="../files.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="memory.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <button class="home" onclick="window.location='../index.html'">חזור</button>
+            <h1 class="title">משחק הזיכרון</h1>
+            <div class="infoWrapper">
+                <div class="infoOverlay">
+                    <div class="textWrap">
+                    <h1 class="info">הידעת?</h1>
+                    <span id="infoText"></span>
+                    </div>
+                    <button class="closeInfo" >הבנתי!</button>
+                </div>
+            </div>
+            <div class="modalWrapper">
+                <div class="modal">
+                    <h1 class="winner">כל הכבוד! התאמת את כל הזוגות!</h1>
+                    <p class="tries">מספר הנסיונות שלך הוא: <span class="count"></span></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
