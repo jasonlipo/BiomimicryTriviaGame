@@ -28,4 +28,9 @@
         <icon density="xxxhdpi" src="www/img/xxxhdpi-icon.png" />
     </platform>
 
+<feature name="File">
+    <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+</feature>
+
+
 </widget>
