@@ -1,7 +1,58 @@
 var FILENAME = 'HangmanHighScores.txt';
 document.addEventListener('deviceready', function () {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
+    //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+
+    alert('file system open: ' + fs.name);
+    fs.root.getFile(FILENAME, { create: true, exclusive: false }, function (fileEntry) {
+
+        alert("fileEntry is file?" + fileEntry.isFile.toString());
+        // fileEntry.name == 'someFile.txt'
+        // fileEntry.fullPath == '/someFile.txt'
+        writeFile(fileEntry, null);
+
+    }, null);
+
+}, null);
 }, false);
+
+function writeFile(fileEntry, dataObj) {
+    // Create a FileWriter object for our FileEntry (log.txt).
+    fileEntry.createWriter(function (fileWriter) {
+
+        fileWriter.onwriteend = function() {
+            alert("Successful file write...");
+            readFile(fileEntry);
+        };
+
+        fileWriter.onerror = function (e) {
+            alert("Failed file write: " + e.toString());
+        };
+
+        // If data object is not passed in,
+        // create a new Blob instead.
+        if (!dataObj) {
+            dataObj = new Blob(['some file data'], { type: 'text/plain' });
+        }
+
+        fileWriter.write(dataObj);
+    });
+}
+
+function readFile(fileEntry) {
+
+    fileEntry.file(function (file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            alert("Successful file read: " + this.result);
+            displayFileData(fileEntry.fullPath + ": " + this.result);
+        };
+
+        reader.readAsText(file);
+
+    }, null);
+}
 
 var Hangman = function (e, w) {
     
