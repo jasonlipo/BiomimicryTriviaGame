@@ -3,8 +3,8 @@
 @font-face{font-family:"Hebrew-Bold";src:url(Trivia/Assistant-ExtraBold.ttf)}
 *{margin:0;padding:0}
 body{direction:rtl;font-family: "Hebrew-Regular";background: url(ladybug.jpg) no-repeat;background-size: cover;text-align:center;text-shadow: 3px 2.5px 8px black;}
-.wrapper{max-height: 100%;; width: 100%;}
+.wrapper{max-height: 100%; width: 100%;}
 .startButton{height: 10vw;width: 10vw;}
 a {text-decoration: none;color: #fff;font-size: 4vw;font-family: "Hebrew-Bold"}
-.gameWrap {float: left;display:inline-block;width: calc(100% / 3);margin: 20vw 0 4vw; }
+.gameWrap {float: left;display:inline-block;width: calc(100% / 3);margin: 15vw 0 4vw; }
 h1 {font-family: "Hebrew-Bold";color: #fff;margin: 2vw 0 2vw;}
