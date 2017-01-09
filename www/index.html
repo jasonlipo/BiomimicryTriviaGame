@@ -7,6 +7,7 @@
 
         document.addEventListener('deviceready', function () {
 
+            alert("Test");
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
                 alert('file system open: ' + fs.name);
@@ -68,7 +69,7 @@
     <body>
         <div class="wrapper">
             <h1 class="title"> ביומימקרי<br />בחר משחק</h1>
-            
+
             <div class="gameWrap">
             <a href="Trivia/index.html" class="link">טריוויה</a><br />
             <input type="image" class="startButton" src="startButton.png" onclick="window.location='Trivia/index.html'" />

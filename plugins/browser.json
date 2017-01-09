@@ -63,13 +63,13 @@
         },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.biomimicrygame.quiz"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.biomimicrygame.quiz"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.biomimicrygame.quiz"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.biomimicrygame.quiz"
         }
     }
