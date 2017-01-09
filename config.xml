@@ -12,10 +12,6 @@
          <application android:debuggable="true" />
     </gap:config-file>
 
-    <!-- PhoneGap plugins for PhoneGap Build to attach to build -->
-    <gap:plugin name="org.apache.cordova.device" source="pgb" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" source="pgb" />
-
     <name>Biomimicry</name>
 
     <description>
