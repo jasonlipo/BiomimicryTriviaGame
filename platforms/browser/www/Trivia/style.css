@@ -1,7 +1,8 @@
 @font-face{font-family:"Hebrew-Light";src:url(Assistant-Light.ttf)}
 @font-face{font-family:"Hebrew-Regular";src:url(Assistant-Regular.ttf)}
 @font-face{font-family:"Hebrew-Bold";src:url(Assistant-ExtraBold.ttf)}
-*{margin:0;padding:0}
+*{margin:0;padding:0;outline:none;}
+img{border:none;}
 body{direction:rtl;font-family: "Hebrew-Regular";background: url(bg.png) no-repeat;background-size: cover;}
 .wrapper{text-align:center;}
 .question{font-family: "Hebrew-Bold";font-size: 3vw;color: #fff;margin: 2vw 15vw 1vw;height: 10vw;}
