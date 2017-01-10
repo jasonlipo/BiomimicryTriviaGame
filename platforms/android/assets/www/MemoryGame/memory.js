@@ -54,12 +54,14 @@ var Memory = function (){
     this.showInfo = function(text) {
         $("#infoText").append(text);
         $(".infoWrapper").css("z-index", 10);
+        $('.infoWrapperOuter').show();
         $(".closeInfo").on("click", this.buttonClick);
     }
     this.buttonClick = function() {
         a.canFlip = true;
         $("#infoText").eq(0).empty();
         $(".infoWrapper").css("z-index", -1);
+        $('.infoWrapperOuter').hide();
     }
     this.checkMatch = function() {
         if ($(".clicked").size() == 2) {

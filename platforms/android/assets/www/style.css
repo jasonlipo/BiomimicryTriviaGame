@@ -8,4 +8,4 @@ body{direction:rtl;font-family: "Hebrew-Regular";background: url(ladybug.jpg) no
 .startButton{height: 10vw;width: 10vw;}
 a {text-decoration: none;color: #fff;font-size: 4vw;font-family: "Hebrew-Bold"}
 .gameWrap {float: left;display:inline-block;width: calc(100% / 3);margin: 14.6vw 0 4vw; }
-h1 {font-family: "Hebrew-Bold";color: #fff;margin: 2vw 0 2vw;}
+h1 {font-family: "Hebrew-Bold";color: #fff;margin: 2vw 0 2vw;font-size: 5vw;}
