@@ -141,7 +141,7 @@ var TriviaQuiz = function(t, x) {
                 return b.score - a.score;
             });
             scores = scores.splice(0, numberToDisplay);
-            $('.question').html('ציוני');
+            $('.question').html('תוצאות');
             $('.answers').after('<div class="scores"></div>');
             $('.answers').hide();
             for (i=0; i<scores.length; i++) {
