@@ -72,13 +72,6 @@
     <author email="boaz.francis@gmail.com" href="https://www.linkedin.com/in/boaz-francis-69460b135">
         Boaz Francis
     </author>
-    <access launch-external="yes" origin="tel:*" />
-    <allow-navigation href="*" />
-    <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
-    <allow-navigation href="data:*" />
-    <allow-intent href="*" />
-    <access origin="*" />
     <icon density="mdpi" src="www/img/mdpi-icon.png" />
     <icon density="hdpi" src="www/img/hdpi-icon.png" />
     <icon density="xhdpi" src="www/img/xhdpi-icon.png" />

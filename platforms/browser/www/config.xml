@@ -1,16 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.biomimicry.game" version="1.0.0" versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.biomimicry.game" version="1.0.0" versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Camera">
         <param name="browser-package" value="Camera" />
     </feature>
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
+    <gap:config-file parent="/manifest" platform="android">
+        <application android:debuggable="true" />
+    </gap:config-file>
     <name>Biomimicry</name>
     <description>
         3 mini-games about biomimicry
     </description>
-    <author email="jlipowicz@hotmail.co.uk" href="http://www.jasonlipowicz.com">
-        Jason Lipowicz, Boaz Francis
+    <author email="boaz.francis@gmail.com" href="https://www.linkedin.com/in/boaz-francis-69460b135">
+        Boaz Francis
     </author>
 </widget>

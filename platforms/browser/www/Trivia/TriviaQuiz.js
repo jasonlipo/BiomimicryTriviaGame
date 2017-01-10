@@ -8,14 +8,14 @@ var TriviaQuiz = function(t, x) {
     // TriviaQuiz.initialise
     // Set up the initial object properties
     this.initialise = function (t, x) {
-        
+
         this.target = t;
         this.question_data = x;
         this.current_question = -1;
-        this.score = 0;       
+        this.score = 0;
 
         this.shuffle(this.question_data);
-        
+
         // Start the first question
         this.nextQuestion();
 
@@ -36,7 +36,7 @@ var TriviaQuiz = function(t, x) {
     // TriviaQuiz.nextQuestion
     // Processes the next question by manipulating the DOM
     this.nextQuestion = function () {
-        
+
         // Increment the question count
         this.current_question++;
 
@@ -49,7 +49,7 @@ var TriviaQuiz = function(t, x) {
         var this_obj = this.question_data[this.current_question];
         var this_question = this_obj["question"];
         var this_answers = this_obj["answers"];
-        
+
         this.shuffle(this_answers);
 
         // Fill the DOM with the current question and answers
@@ -57,7 +57,7 @@ var TriviaQuiz = function(t, x) {
         for (var i=0; i<this_answers.length; i++) {
             this.target.find('.answers .answer-' + i).html(this_answers[i]["text"]);
         }
-        
+
         // Set the click events for the questions
         this.activateClickEvents();
 
@@ -172,7 +172,7 @@ var TriviaQuiz = function(t, x) {
     // TriviaQuiz.reset
     // Re-start the game
     this.reset = function () {
-        location.href='../';
+        location.href='../index.html';
     }
 
     this.initialise(t, x);

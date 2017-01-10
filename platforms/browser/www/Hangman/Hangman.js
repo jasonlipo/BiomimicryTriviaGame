@@ -4,11 +4,11 @@ document.addEventListener('deviceready', function () {
 }, false);
 
 var Hangman = function (e, w) {
-    
+
     // Hangman.initialise
     // Build the hangman game
     this.initialise = function (el, words) {
-        
+
         this.el = el;
         this.listOfLetters = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ל","מ","נ","ס","ע","פ","צ","ק","ר","ש","ת"];
 
@@ -47,7 +47,7 @@ var Hangman = function (e, w) {
             $(this).addClass("muted");
             guessedLetter = $(this).text();
             game.makeGuess(guessedLetter);
-        }); 
+        });
 
         this.startTimer();
 
@@ -78,9 +78,9 @@ var Hangman = function (e, w) {
     // Hangman.makeGuess
     // Callback function when the user guesses a letter
     this.makeGuess = function (guessedLetter) {
-                
+
         if (this.guessedLetters.indexOf(guessedLetter) === -1) {
-            
+
             this.guessedLetters.push(guessedLetter);
             if (this.wordHasLetter(guessedLetter)) {
                 this.revealLetters(guessedLetter);
@@ -223,7 +223,7 @@ var Hangman = function (e, w) {
     // Hangman.reset
     // Re-start the game
     this.reset = function () {
-        location.href='../';
+        location.href='../index.html';
     }
 
     this.initialise(e, w);

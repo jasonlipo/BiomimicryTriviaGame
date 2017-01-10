@@ -1,7 +1,8 @@
 @font-face{font-family:"Hebrew-Light";src:url(Trivia/Assistant-Light.ttf)}
 @font-face{font-family:"Hebrew-Regular";src:url(Trivia/Assistant-Regular.ttf)}
 @font-face{font-family:"Hebrew-Bold";src:url(Trivia/Assistant-ExtraBold.ttf)}
-*{margin:0;padding:0}
+*{margin:0;padding:0;outline:none;}
+img {border:none;}
 body{direction:rtl;font-family: "Hebrew-Regular";background: url(ladybug.jpg) no-repeat;background-size: cover;text-align:center;text-shadow: 3px 2.5px 8px black;}
 .wrapper{max-height: 100%; width: 100%;}
 .startButton{height: 10vw;width: 10vw;}
