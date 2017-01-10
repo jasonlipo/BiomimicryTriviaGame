@@ -152,7 +152,7 @@ var TriviaQuiz = function(t, x) {
                     $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
                 }
             }
-            $('.scores').append('<br /><button class="finish">שחק שוב</button>');
+            $('.scores').append('<br /><button class="finish">שלח</button>');
             $('.finish').click(this.onfinishscores.bind(this));
             $(document).keypress(function (e) {
                 if (e.which == 13) {
