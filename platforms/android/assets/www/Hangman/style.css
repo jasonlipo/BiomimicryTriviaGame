@@ -14,7 +14,7 @@ body{direction:rtl;font-family:"Hebrew-Regular";background:url(bg.jpg) no-repeat
 .hangman-sprite{background-image:url(hangman.png);width:300px;height:400px;opacity:.7;border-radius:20px}
 .header{margin:20px auto 40px}
 .sub-title{font-size:.6em;font-weight:100;letter-spacing:1px}
-.letter{border-bottom:2px solid #000;font-size:3vw;height:4vw;width:2vw;text-align:center;display:inline-block;margin-right:.8vw;vertical-align:top}
+.letter{border-bottom:2px solid #000;font-size: 5vw;height: 6vw;width: 3vw;text-align:center;display:inline-block;margin-right:.8vw;vertical-align:top;}
 .letter.space{border:none}
 .red{color:#c0392b}
 .green{color:#2ecc71}
@@ -22,7 +22,7 @@ body{direction:rtl;font-family:"Hebrew-Regular";background:url(bg.jpg) no-repeat
 button.play-again{display:none;margin-top:20px}
 .unguessed-letters{text-align:center;margin:2vw}
 .unguessed-letters p{text-align:center}
-.letter-choice{margin:1vw;font-size:3em;display:inline-block;cursor:pointer}
+.letter-choice{margin:1vw;font-size: 5em;display:inline-block;cursor:pointer;}
 .letter-choice:hover{color:#fff}
 .incorrect-guesses h4{float:left}
 .light-weight{font-weight:100}

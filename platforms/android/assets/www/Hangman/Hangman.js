@@ -202,7 +202,7 @@ var Hangman = function (e, w) {
                     $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
                 }
             }
-            $('.scores').append('<br /><button class="finish">Finish</button>');
+            $('.scores').append('<br /><button class="finish">שחק שוב</button>');
             $('.finish').click(this.onfinishscores.bind(this));
             $(document).keypress(function (e) {
                 if (e.which == 13) {
