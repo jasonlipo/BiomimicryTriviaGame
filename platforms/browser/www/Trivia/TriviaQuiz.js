@@ -95,7 +95,7 @@ var TriviaQuiz = function(t, x) {
             setTimeout(function () {
                 timer_ref.target.find('.answers div').removeClass('right');
                 timer_ref.nextQuestion();
-            }, 2000);
+            }, 1000);
         }
         else {
             // Show this as the wrong answer and show the correct one
@@ -112,7 +112,7 @@ var TriviaQuiz = function(t, x) {
             setTimeout(function () {
                 timer_ref.target.find('.answers div').removeClass('wrong').removeClass('right');
                 timer_ref.nextQuestion();
-            }, 2000);
+            }, 1000);
         }
     }
 
@@ -153,20 +153,27 @@ var TriviaQuiz = function(t, x) {
                 }
             }
             $('.scores').append('<br /><button class="finish">Finish</button>');
-            $('.finish').click(function () {
-                if ($('.highscore-name').size() > 0) {
-                    name = $('.highscore-name').val();
-                    i = parseInt($('.highscore-name').attr('id'));
-                    scores[i].name = name;
-                    saveText(JSON.stringify(scores), function () {
-                        this.reset();
-                    }.bind(this));
-                }
-                else {
-                    this.reset();
+            $('.finish').click(this.onfinishscores.bind(this));
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    this.onfinishscores.bind(this)();
                 }
             }.bind(this));
         }.bind(this));
+    }
+
+    this.onfinishscores = function () {
+        if ($('.highscore-name').size() > 0) {
+            name = $('.highscore-name').val();
+            i = parseInt($('.highscore-name').attr('id'));
+            scores[i].name = name;
+            saveText(JSON.stringify(scores), function () {
+                this.reset();
+            }.bind(this));
+        }
+        else {
+            this.reset();
+        }
     }
 
     // TriviaQuiz.reset

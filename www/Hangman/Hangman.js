@@ -203,21 +203,28 @@ var Hangman = function (e, w) {
                 }
             }
             $('.scores').append('<br /><button class="finish">Finish</button>');
-            $('.finish').click(function () {
-                if ($('.highscore-name').size() > 0) {
-                    name = $('.highscore-name').val();
-                    i = parseInt($('.highscore-name').attr('id'));
-                    scores[i].name = name;
-                    saveText(JSON.stringify(scores), function () {
-                        this.reset();
-                    }.bind(this));
-                }
-                else {
-                    this.reset();
+            $('.finish').click(this.onfinishscores.bind(this));
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    this.onfinishscores.bind(this)();
                 }
             }.bind(this));
         }.bind(this));
 
+    }
+
+    this.onfinishscores = function () {
+        if ($('.highscore-name').size() > 0) {
+            name = $('.highscore-name').val();
+            i = parseInt($('.highscore-name').attr('id'));
+            scores[i].name = name;
+            saveText(JSON.stringify(scores), function () {
+                this.reset();
+            }.bind(this));
+        }
+        else {
+            this.reset();
+        }
     }
 
     // Hangman.reset

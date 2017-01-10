@@ -85,4 +85,6 @@
     <preference name="android-targetSdkVersion" value="12" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="Fullscreen" value="true" />
 </widget>
