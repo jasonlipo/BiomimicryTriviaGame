@@ -1,4 +1,4 @@
-var FILENAME = 'HangmanHighScores.txt';
+﻿var FILENAME = 'HangmanHighScores.txt';
 document.addEventListener('deviceready', function () {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
 }, false);
@@ -18,7 +18,7 @@ var Hangman = function (e, w) {
 
         // Initialise the new word
         this.listOfWords = words;
-        this.wordToGuess = this.listOfWords[Math.round(Math.random() * this.listOfWords.length)];
+        this.wordToGuess = this.listOfWords[Math.round(Math.random() * (this.listOfWords.length-1))];
         this.revealedLetters = [];
 
         // Set up the DOM
