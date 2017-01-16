@@ -1,4 +1,4 @@
-﻿var FILENAME = 'HangmanHighScores.txt';
+var FILENAME = 'HangmanHighScores.txt';
 document.addEventListener('deviceready', function () {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
 }, false);
@@ -191,7 +191,7 @@ var Hangman = function (e, w) {
                 return a.time - b.time;
             });
             scores = scores.splice(0, numberToDisplay);
-            $('.title h1').html('ציוני');
+            $('.title h1').html('לוח תוצאות');
             $('.hangman-game').after('<div class="scores"></div>');
             $('.hangman-game').hide();
             for (i=0; i<scores.length; i++) {
