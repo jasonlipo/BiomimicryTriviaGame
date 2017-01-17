@@ -35,13 +35,15 @@
         <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
         <preference name="StatusBarOverlaysWebView" value="true" />
         <preference name="Fullscreen" value="true" />
-        <preference name="KeepScreenOn" value="true" />
         <icon density="mdpi" src="www/img/mdpi-icon.png" />
         <icon density="hdpi" src="www/img/hdpi-icon.png" />
         <icon density="xhdpi" src="www/img/xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/img/xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/img/xxxhdpi-icon.png" />
     </platform>
+    
+    <LinearLayout
+                  android: keepScreenOn="true">
 
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
     <plugin name="cordova-plugin-file" spec="~4.3.1" />
