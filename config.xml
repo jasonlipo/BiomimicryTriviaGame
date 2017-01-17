@@ -35,6 +35,7 @@
         <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
         <preference name="StatusBarOverlaysWebView" value="true" />
         <preference name="Fullscreen" value="true" />
+        <preference name="KeepScreenOn" value="true" />
         <icon density="mdpi" src="www/img/mdpi-icon.png" />
         <icon density="hdpi" src="www/img/hdpi-icon.png" />
         <icon density="xhdpi" src="www/img/xhdpi-icon.png" />
