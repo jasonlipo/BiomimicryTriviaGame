@@ -43,8 +43,6 @@
         <icon density="xxxhdpi" src="www/img/xxxhdpi-icon.png" />
     </platform>
     
-    <RelativeLayout android:keepScreenOn="true">
-    </RelativeLayout>
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
     <plugin name="cordova-plugin-file" spec="~4.3.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
