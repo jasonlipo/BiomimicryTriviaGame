@@ -33,7 +33,7 @@ ul hr{margin:5px auto}
 .title h1{font-size:5vw;color:#fff;font-family:"Hebrew-Bold";font-weight:400;text-align:center;margin:2vw}
 .hangman-game{background:rgba(255,255,255,0.59);text-align:center;margin: 2vw 0;display: inline-block;width: 100%;}
 .timer{color:#a01a1a;font-weight:700;font-size:6vw;font-family:"Hebrew-Bold";margin:2vw 0;display:inline-block;direction: ltr;}
-.scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw;text-align: center;}
+.scores{background:rgba(255,255,255,0.68);margin:3vw 7vw 0;padding:2vw;text-align: center;font-size: 4vw;}
 .scores .row{display:block;background:#fff;border:.3vw solid #666;margin-bottom: 0.6vw;text-align:left;padding:.5vw;}
 .scores .row.s{background: #ffffbd;}
 .scores .row .highscore-name{font-size: 2.5vw;border: none;border-bottom: 0.3vw dotted #333;background: none;outline: none;}

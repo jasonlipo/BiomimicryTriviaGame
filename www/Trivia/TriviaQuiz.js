@@ -1,8 +1,3 @@
-var FILENAME = 'TriviaHighScores.txt';
-document.addEventListener('deviceready', function () {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
-}, false);
-
 var TriviaQuiz = function(t, x) {
 
     // TriviaQuiz.initialise
@@ -125,56 +120,13 @@ var TriviaQuiz = function(t, x) {
     // TriviaQuiz.endGame
     // Finish the game and show highscore table
     this.endGame = function () {
-        readText(function (text) {
-            numberToDisplay = 5;
-            if (text == "") {
-                scores = [];
-            }
-            else {
-                scores = JSON.parse(text);
-            }
-            scores.push({
-                name: "...",
-                score: this.score
-            })
-            scores.sort(function (a, b) {
-                return b.score - a.score;
-            });
-            scores = scores.splice(0, numberToDisplay);
-            $('.question').html('לוח תוצאות');
-            $('.answers').after('<div class="scores"></div>');
-            $('.answers').hide();
-            for (i=0; i<scores.length; i++) {
-                if (scores[i].name == "...") {
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+this.score+'</div></div>');
-                }
-                else {
-                    $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+scores[i].score+'</div></div>');
-                }
-            }
-            $('.scores').append('<br /><button class="finish">שלח</button>');
-            $('.finish').click(this.onfinishscores.bind(this));
-            $(document).keypress(function (e) {
-                if (e.which == 13) {
-                    this.onfinishscores.bind(this)();
-                }
-            }.bind(this));
-        }.bind(this));
+        $('.question').html('כל הכבוד!');
+        $('.answers').after('<div class="scores"></div>');
+        $('.answers').hide();
+        $('.scores').append('הניקוד שלך הוא:<br /><span style="display: block; direction: ltr;">'+this.score+'</span><br /><br /><button class="finish">שלח</button>');
+        $('.finish').click(this.reset);
     }
 
-    this.onfinishscores = function () {
-        if ($('.highscore-name').size() > 0) {
-            name = $('.highscore-name').val();
-            i = parseInt($('.highscore-name').attr('id'));
-            scores[i].name = name;
-            saveText(JSON.stringify(scores), function () {
-                this.reset();
-            }.bind(this));
-        }
-        else {
-            this.reset();
-        }
-    }
 
     // TriviaQuiz.reset
     // Re-start the game

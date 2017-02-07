@@ -1,8 +1,3 @@
-var FILENAME = 'HangmanHighScores.txt';
-document.addEventListener('deviceready', function () {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
-}, false);
-
 var Hangman = function (e, w) {
 
     // Hangman.initialise
@@ -175,57 +170,14 @@ var Hangman = function (e, w) {
     // Finish the game and show highscore table
     this.finish = function () {
         clearInterval(this.timerInterval);
-        readText(function (text) {
-            numberToDisplay = 5;
-            if (text == "") {
-                scores = [];
-            }
-            else {
-                scores = JSON.parse(text);
-            }
-            scores.push({
-                name: "...",
-                time: this.timer
-            })
-            scores.sort(function (a, b) {
-                return a.time - b.time;
-            });
-            scores = scores.splice(0, numberToDisplay);
-            $('.title h1').html('לוח תוצאות');
-            $('.hangman-game').after('<div class="scores"></div>');
-            $('.hangman-game').hide();
-            for (i=0; i<scores.length; i++) {
-                if (scores[i].name == "...") {
-                    $('.scores').append('<div class="row s"><div class="name"><input type="text" class="highscore-name" placeholder="הכנס את שמך" id="'+i+'" /></div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
-                }
-                else {
-                    $('.scores').append('<div class="row"><div class="name">'+scores[i].name+'</div><div class="number">'+this.secondsToString(scores[i].time)+'</div></div>');
-                }
-            }
-            $('.scores').append('<br /><button class="finish">שלח</button>');
-            $('.finish').click(this.onfinishscores.bind(this));
-            $(document).keypress(function (e) {
-                if (e.which == 13) {
-                    this.onfinishscores.bind(this)();
-                }
-            }.bind(this));
-        }.bind(this));
-
+        $('.title h1').html('כל הכבוד!');
+        $('.hangman-game').after('<div class="scores"></div>');
+        $('.hangman-game').hide();
+        
+        $('.scores').append('הניקוד שלך הוא:<br /><span style="display: block; direction: ltr;">' + this.secondsToString(this.timer) + '</span><br /><br /><button class="finish">שלח</button>');
+        $('.finish').click(this.reset);
     }
 
-    this.onfinishscores = function () {
-        if ($('.highscore-name').size() > 0) {
-            name = $('.highscore-name').val();
-            i = parseInt($('.highscore-name').attr('id'));
-            scores[i].name = name;
-            saveText(JSON.stringify(scores), function () {
-                this.reset();
-            }.bind(this));
-        }
-        else {
-            this.reset();
-        }
-    }
 
     // Hangman.reset
     // Re-start the game
