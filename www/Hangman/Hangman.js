@@ -174,7 +174,7 @@ var Hangman = function (e, w) {
         $('.hangman-game').after('<div class="scores"></div>');
         $('.hangman-game').hide();
         
-        $('.scores').append('הניקוד שלך הוא:<br /><span style="display: block; direction: ltr;">' + this.secondsToString(this.timer) + '</span><br /><br /><button class="finish">שלח</button>');
+        $('.scores').append('הזמן שלך הוא:<br /><span style="display: block; direction: ltr;">' + this.secondsToString(this.timer) + '</span><br /><br /><button class="finish back_button">חזור</button>');
         $('.finish').click(this.reset);
     }
 

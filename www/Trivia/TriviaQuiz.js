@@ -123,7 +123,7 @@ var TriviaQuiz = function(t, x) {
         $('.question').html('כל הכבוד!');
         $('.answers').after('<div class="scores"></div>');
         $('.answers').hide();
-        $('.scores').append('הניקוד שלך הוא:<br /><span style="display: block; direction: ltr;">'+this.score+'</span><br /><br /><button class="finish">שלח</button>');
+        $('.scores').append('מספר התשובות הנכונות שלך הוא:<br /><span style="display: block; direction: ltr;">'+this.score+'</span><br /><br /><button class="finish back_button">חזור</button>');
         $('.finish').click(this.reset);
     }
 

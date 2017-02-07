@@ -39,6 +39,6 @@ ul hr{margin:5px auto}
 .scores .row .highscore-name{font-size: 2.5vw;border: none;border-bottom: 0.3vw dotted #333;background: none;outline: none;}
 .scores .row .number{display:inline-block;font-size:3vw;margin-left:1vw;direction: ltr;}
 .scores .row .name{float:right;font-size:3vw;margin-right:1vw}
-.finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;}
+.finish{font-size: 2vw;padding: 1vw 2vw;border: none;background: #fff;position: relative !important;margin: 0 !important;}
 .back_button, .start_button{height: 6vw;width: 10vw;box-shadow:inset 0px 0px 0px 0px #fff6af;background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);background-color:#ffec64;border-radius:6px;border:0.2vw solid #ffaa22;font-size:2vw;margin: 2vw 3vw;position: absolute;left: 0;top: 0;}
 .start_button{position:relative;}
